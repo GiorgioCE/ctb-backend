@@ -24,9 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/spends', spendsRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
+// app.use('/spends', spendsRouter);
+
+app.get("/", function (req, res) {
+  res.send("<h1>Hello World!</h1>")
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
